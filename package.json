@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "parcel": "^2.8.2"
   },
   "name": "second-app",
