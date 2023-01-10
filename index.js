@@ -1,5 +1,19 @@
 import { MathOperations } from "./src/mathoperations";
 
+import React, { Component } from "react";
+
+class Hello extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>Hello, World!</div>
+    );
+  }
+}
+
 const result = MathOperations.multiply(2,3);
 console.log(result);
 
