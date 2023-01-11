@@ -1,2 +1,5 @@
 /node_modules
 /.cache
+/.eslintrc.json
+/yarn.lock
+/README.md

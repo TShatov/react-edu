@@ -1,6 +1,8 @@
 {
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "eslint": "^8.31.0",
+    "eslint-plugin-react": "^7.32.0",
     "parcel": "^2.8.2"
   },
   "name": "second-app",

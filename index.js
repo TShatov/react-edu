@@ -1,4 +1,4 @@
-import { MathOperations } from "./src/mathoperations";
+import { MathOperations } from "./src/MathOperations";
 
 import React, { Component } from "react";
 
@@ -11,7 +11,9 @@ class Hello extends Component {
 
   render() {
     return (
-      <div>Hello, World!</div>
+      <div>
+        Hello, World!
+      </div>
     );
   }
 }
