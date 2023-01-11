@@ -2,6 +2,8 @@ import { MathOperations } from "./src/mathoperations";
 
 import React, { Component } from "react";
 
+import ReactDOM from "react-dom";
+
 class Hello extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,11 @@ class Hello extends Component {
     );
   }
 }
+
+ReactDOM.render(
+  <Hello />,
+  document.getElementById('root')
+);
 
 const result = MathOperations.multiply(2,3);
 console.log(result);
