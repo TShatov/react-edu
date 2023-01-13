@@ -4,10 +4,6 @@ import ReactDOM from "react-dom";
 
 import { Catalog } from "./src/Catalog";
 
-import { Products } from "./constants/Products";
-
-import { ProductCard } from "./src/ProductCard"
-
 class Hello extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +24,6 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <Catalog />,
+  <Catalog product={product}/>,
   document.getElementById('product')
 )
