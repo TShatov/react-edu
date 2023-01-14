@@ -10,11 +10,11 @@ export class Catalog extends Component {
   }
 
   render() {
-    const productsList = products;
+    //const productsList = products;
     return (
       <div>
         {
-          productsList.map(product => (
+          products.map(product => (
             <ProductCard 
               key={product.id}
               title={product.title}
