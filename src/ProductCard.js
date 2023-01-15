@@ -1,8 +1,8 @@
-import TextBox from "./TextBox";
-import Price from "./Price";
-import Image from "./Image";
+import TextBox from './TextBox';
+import Price from './Price';
+import Image from './Image';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class ProductCard extends Component {
   constructor(props) {
@@ -15,11 +15,11 @@ class ProductCard extends Component {
         <TextBox title={this.props.title}/>
         <Price price={this.props.price}/>
         <Image src={this.props.src}
-               width={200}
-               height={200}
-               alt={this.props.title}/>
+          width={200}
+          height={200}
+          alt={this.props.title}/>
       </div>
-    )
+    );
   }
 }
 

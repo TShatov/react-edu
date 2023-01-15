@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 
-import Catalog from "./src/Catalog";
+import Catalog from './src/Catalog';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <Catalog />
-    )
+    );
   }
 }
 

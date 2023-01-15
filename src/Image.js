@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Image extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Image extends Component {
         height={this.props.height}
         alt={this.props.alt}
       />
-    )
+    );
   }
 }
 

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ProductCard from "./ProductCard";
+import ProductCard from './ProductCard';
 
-import products from "../constants/Products"
+import products from '../constants/Products';
 
 class Catalog extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Catalog extends Component {
           ))
         }
       </div>
-    )
+    );
   }
 }
 
