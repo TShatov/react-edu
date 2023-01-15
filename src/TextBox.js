@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-export const TextBox = ({ title }) => (
+const TextBox = ({ title }) => (
   <span>{title}</span>
 )
+
+export default TextBox;

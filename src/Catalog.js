@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 
-import { ProductCard } from "./ProductCard";
+import ProductCard from "./ProductCard";
 
 import products from "../constants/Products"
 
-export class Catalog extends Component {
+class Catalog extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    //const productsList = products;
     return (
       <div>
         {
@@ -27,3 +26,5 @@ export class Catalog extends Component {
     )
   }
 }
+
+export default Catalog;

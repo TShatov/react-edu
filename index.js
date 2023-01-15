@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import ReactDOM from "react-dom";
 
-import { Catalog } from "./src/Catalog";
+import Catalog from "./src/Catalog";
 
 class App extends Component {
   constructor(props) {

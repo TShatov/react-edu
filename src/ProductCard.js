@@ -1,6 +1,6 @@
-import { TextBox } from "./TextBox";
-import { Price } from "./Price";
-import { Image } from "./Image";
+import TextBox from "./TextBox";
+import Price from "./Price";
+import Image from "./Image";
 
 import React, { Component } from "react";
 
@@ -23,4 +23,4 @@ class ProductCard extends Component {
   }
 }
 
-export { ProductCard as ProductCard };
+export default ProductCard;
