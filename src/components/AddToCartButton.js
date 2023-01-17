@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
+import products from '../../constants/Products';
 import ShoppingCartContext from '../ShoppingCartContext';
 
 class AddToCart extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { productAmount: 0 };
-
-    this.addProduct = this.addProduct.bind(this);
-  }
-
-  addProduct() {
-    this.setState((prevState) => ({ productAmount: prevState.productAmount + 1}));
+    // this.addProduct = this.addProduct.bind(this);
   }
 
   render() {
     return (
       <ShoppingCartContext.Consumer>
         {
-          (addProduct) => {
+          ({addProduct, amount}) => {
             return (
-              <button onClick={this.addProduct}>Add to Cart ({this.state.productAmount})</button>
+              <button onClick={() => addProduct(products, amount)}>Add to Cart</button>
             );
           }
         }
@@ -28,9 +23,5 @@ class AddToCart extends Component {
     );
   }
 }
-
-AddToCart.defaultProps = {
-  productAmount: 0
-};
 
 export default AddToCart;
