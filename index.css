@@ -1,25 +1,14 @@
-body, p, span {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+html {
+  background-color: #D9D9D9;
 }
 
-button {
-  width: 100px;
-  height: 40px;
-  background-color: beige;
-  border-radius: 5px;
-  border: none;
-  margin: 10px;
-}
-
-button:hover {
-  background-color: burlywood;
-  transition: all 0.5s;
-}
-
-button:active {
-  background-color: coral;
-  transition: none;
+body {
+  background-color: #B0B0B0;
+  margin: 0 auto;
+  max-width: 1440px;
+  font-family: 'Inter';
 }
 
 #root {
@@ -27,21 +16,46 @@ button:active {
   justify-content: center;
 }
 
-.product-catalog {
-  display: flex;
+.catalog-section {
+  background-color: #5D5D5D;
+  padding: 70px;
 }
 
-.product-card {
+.product-catalog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px 66px;
+}
+
+.shopping-bag {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  background-color: blueviolet;
-  border-radius: 20px;
-  border: 3px solid violet;
-  margin: 10px;
 }
 
-.product-card img {
-  border-radius: 10px;
+.shopping-bag p {
+  color: #F9FAFD;
+  font-size: 18px;
+}
+
+.shopping-bag button {
+  width: 200px;
+  height: 40px;
+  background-color: #B92822;
+  color: #F9FAFD;
+  border-radius: 25px;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.shopping-bag button:hover {
+  background-color: burlywood;
+  transition: all 0.5s;
+}
+
+.shopping-bag button:active {
+  background-color: coral;
+  transition: none;
 }

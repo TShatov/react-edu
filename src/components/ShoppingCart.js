@@ -12,7 +12,7 @@ class ShoppingCart extends Component {
         {
           ({ productsInCart }) => {
             return (
-              <div>
+              <div className='shopping-bag'>
                 <p>Shopping Bag: ({productsInCart.length})</p>
                 <button>Buy</button>
               </div>

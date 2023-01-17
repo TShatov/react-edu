@@ -13,9 +13,9 @@ class ShopContainer extends Component {
     this.addProduct = this.addProduct.bind(this);
   }
 
-  addProduct(product, amount = 1) {
+  addProduct(product, quantity) {
     const productsInCart = this.state.productsInCart;
-    productsInCart.push({ ...product, amount });
+    productsInCart.push({ ...product, quantity });
     this.setState({ productsInCart });
   }
 
@@ -25,7 +25,7 @@ class ShopContainer extends Component {
         productsInCart: this.state.productsInCart,
         addProduct: this.addProduct
       }}>
-        <div>
+        <div className='catalog-section'>
           <Catalog />
           <ShoppingCart />
         </div>
