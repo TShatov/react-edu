@@ -11,7 +11,7 @@ class Catalog extends Component {
 
   render() {
     return (
-      <div>
+      <div className='product-catalog'>
         {
           products.map(product => (
             <ProductCard 

@@ -1,6 +1,7 @@
 import TextBox from './TextBox';
 import Price from './Price';
 import Image from './Image';
+import AddToCart from './AddToCartButton';
 
 import React, { Component } from 'react';
 
@@ -11,7 +12,7 @@ class ProductCard extends Component {
 
   render() {
     return (
-      <div>
+      <div className='product-card'>
         <TextBox title={this.props.title}/>
         <Price price={this.props.price}/>
         <Image
@@ -19,6 +20,7 @@ class ProductCard extends Component {
           width={200}
           height={200}
           alt={this.props.title}/>
+        <AddToCart key={this.props.id}/>
       </div>
     );
   }

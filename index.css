@@ -1,0 +1,47 @@
+body, p, span {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background-color: beige;
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: burlywood;
+  transition: all 0.5s;
+}
+
+button:active {
+  background-color: coral;
+  transition: none;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.product-catalog {
+  display: flex;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  background-color: blueviolet;
+  border-radius: 20px;
+  border: 3px solid violet;
+  margin: 10px;
+}
+
+.product-card img {
+  border-radius: 10px;
+}

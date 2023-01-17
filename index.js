@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import ReactDOM from 'react-dom';
 
-import Catalog from './src/Catalog';
+import ShopContainer from './src/ShopContainer';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +11,9 @@ class App extends Component {
 
   render() {
     return (
-      <Catalog />
+      <div>
+        <ShopContainer />
+      </div>
     );
   }
 }
