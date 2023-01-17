@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Catalog from './Catalog';
-import ShoppingCart from './ShoppingCart';
+import ShoppingCart from './components/ShoppingCart';
 import ShoppingCartContext from './ShoppingCartContext';
 
 class ShopContainer extends Component {
