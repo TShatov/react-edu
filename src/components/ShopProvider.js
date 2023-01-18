@@ -14,7 +14,6 @@ class ShopProvider extends Component {
   addProduct(product, amount = 1) {
     const productsInCart = this.state.productsInCart;
     productsInCart.push({ ...product, amount });
-    debugger;
     this.setState({ productsInCart });
   }
 

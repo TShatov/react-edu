@@ -13,20 +13,21 @@ class ProductCard extends Component {
   }
 
   render() {
+    const product = this.props.product;
     return (
       <div className='product-card'>
         <div className='left'>
           <Image
-            src={this.props.src}
+            src={product.image}
             width={330}
             height={383}
-            alt={this.props.title}
+            alt={product.title}
           />
         </div>
         <div className='right'>
-          <TextBox title={this.props.title}/>
-          <Price price={this.props.price}/>
-          <AddToCart key={this.props.id}/>
+          <TextBox title={product.title} />
+          <Price price={product.price} />
+          <AddToCart product={product} />
         </div>
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { products } from '~src/constants/Products';
 import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
 class AddToCart extends Component {
@@ -7,7 +6,7 @@ class AddToCart extends Component {
     super(props);
 
     this.state = {
-      quantity: 0
+      quantity: 1
     };
 
     this.setQuantity = this.setQuantity.bind(this);
@@ -15,7 +14,7 @@ class AddToCart extends Component {
 
   setQuantity(e) {
     this.setState({
-      quantity: e.target.value
+      quantity: parseInt(e.target.value)
     });
   }
 
@@ -23,7 +22,7 @@ class AddToCart extends Component {
     return (
       <ShoppingCartContext.Consumer>
         {
-          ({addProduct, amount}) => {
+          ({addProduct}) => {
             return (
               <div className='add-to-card__container'>
                 <label>Quantity</label>
@@ -32,7 +31,7 @@ class AddToCart extends Component {
                   value={this.state.quantity}
                   onChange={this.setQuantity}
                 />
-                <button onClick={() => addProduct(products, amount)}>Add to Cart</button>
+                <button onClick={() => addProduct(this.props, this.quantity)}>Add to Cart</button>
               </div>
             );
           }

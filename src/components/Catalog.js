@@ -14,12 +14,10 @@ class Catalog extends Component {
     return (
       <div className='product-catalog'>
         {
-          products.map(product => (
+          products.map((product) => (
             <ProductCard 
               key={product.id}
-              title={product.title}
-              price={product.price}
-              src={product.image}
+              product={product}
             />
           ))
         }
