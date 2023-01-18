@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
-import Catalog from './Catalog';
-import ShoppingCart from './components/ShoppingCart';
-import ShoppingCartContext from './ShoppingCartContext';
+import ShoppingCartContext from '../contexts/ShoppingCartContext';
 
-class ShopContainer extends Component {
+class ShopProvider extends Component {
   constructor(props) {
     super(props);
 
@@ -26,12 +24,11 @@ class ShopContainer extends Component {
         addProduct: this.addProduct
       }}>
         <div className='catalog-section'>
-          <Catalog />
-          <ShoppingCart />
+          {this.props.children}
         </div>
       </ShoppingCartContext.Provider>
     );
   }
 }
 
-export default ShopContainer;
+export default ShopProvider;

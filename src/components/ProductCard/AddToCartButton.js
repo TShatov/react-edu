@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import products from '../../../constants/Products';
-import ShoppingCartContext from '../../ShoppingCartContext';
+import products from '../../constants/Products';
+import ShoppingCartContext from '../../contexts/ShoppingCartContext';
 
 class AddToCart extends Component {
   constructor(props) {
