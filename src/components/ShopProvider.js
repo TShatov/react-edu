@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ShoppingCartContext from '../contexts/ShoppingCartContext';
+import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
 class ShopProvider extends Component {
   constructor(props) {
@@ -11,9 +11,10 @@ class ShopProvider extends Component {
     this.addProduct = this.addProduct.bind(this);
   }
 
-  addProduct(product, quantity) {
+  addProduct(product, amount = 1) {
     const productsInCart = this.state.productsInCart;
-    productsInCart.push({ ...product, quantity });
+    productsInCart.push({ ...product, amount });
+    debugger;
     this.setState({ productsInCart });
   }
 

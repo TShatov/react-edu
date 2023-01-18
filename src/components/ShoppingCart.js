@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import ShoppingCartContext from '../contexts/ShoppingCartContext';
+import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
+
+import './ShoppingCart.css';
 
 class ShoppingCart extends Component {
   constructor(props) {
@@ -14,6 +16,13 @@ class ShoppingCart extends Component {
             return (
               <div className='shopping-bag'>
                 <p>Shopping Bag: ({productsInCart.length})</p>
+                <ul>
+                  {
+                    productsInCart.map(products => 
+                      <li key={ products.id }>{ products.title }</li>
+                    )
+                  }
+                </ul>
                 <button>Buy</button>
               </div>
             );
@@ -23,9 +32,5 @@ class ShoppingCart extends Component {
     );
   }
 }
-
-ShoppingCart.defaultProps = {
-  value: 0
-};
 
 export default ShoppingCart;

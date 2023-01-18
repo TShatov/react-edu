@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import ProductCard from './ProductCard/index';
+import ProductCard from './ProductCard';
+import products from '~src/constants/Products';
 
-import products from '../constants/Products';
+import './Catalog.css';
 
 class Catalog extends Component {
   constructor(props) {

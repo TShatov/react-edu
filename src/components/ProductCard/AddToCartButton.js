@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import products from '../../constants/Products';
-import ShoppingCartContext from '../../contexts/ShoppingCartContext';
+import { products } from '~src/constants/Products';
+import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
 class AddToCart extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class AddToCart extends Component {
     return (
       <ShoppingCartContext.Consumer>
         {
-          ({addProduct, quantity}) => {
+          ({addProduct, amount}) => {
             return (
               <div className='add-to-card__container'>
                 <label>Quantity</label>
@@ -32,7 +32,7 @@ class AddToCart extends Component {
                   value={this.state.quantity}
                   onChange={this.setQuantity}
                 />
-                <button onClick={() => addProduct(products, quantity)}>Add to Cart</button>
+                <button onClick={() => addProduct(products, amount)}>Add to Cart</button>
               </div>
             );
           }

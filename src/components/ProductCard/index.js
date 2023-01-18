@@ -1,11 +1,11 @@
-import './ProductCard.css';
+import React, { Component } from 'react';
 
 import TextBox from './TextBox';
 import Price from './Price';
 import Image from './Image';
 import AddToCart from './AddToCartButton';
 
-import React, { Component } from 'react';
+import './ProductCard.css';
 
 class ProductCard extends Component {
   constructor(props) {
@@ -20,7 +20,8 @@ class ProductCard extends Component {
             src={this.props.src}
             width={330}
             height={383}
-            alt={this.props.title}/>
+            alt={this.props.title}
+          />
         </div>
         <div className='right'>
           <TextBox title={this.props.title}/>
