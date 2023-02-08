@@ -31,7 +31,7 @@ class AddToCart extends Component {
                   value={this.state.quantity}
                   onChange={this.setQuantity}
                 />
-                <button onClick={() => addProduct(this.props, this.quantity)}>Add to Cart</button>
+                <button onClick={() => addProduct(this.props.product, this.quantity)}>Add to Cart</button>
               </div>
             );
           }

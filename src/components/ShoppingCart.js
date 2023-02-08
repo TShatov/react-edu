@@ -18,8 +18,8 @@ class ShoppingCart extends Component {
                 <p>Shopping Bag: ({productsInCart.length})</p>
                 <ul>
                   {
-                    productsInCart.map((product, amount) => (
-                      <li key={product.product.id}>{product.product.title}<span>{amount}</span></li>
+                    productsInCart.map((cartItem, amount) => (
+                      <li key={cartItem.product.id}>{cartItem.product.title}<span> {amount+1}</span></li>
                     ))
                   }
                 </ul>
