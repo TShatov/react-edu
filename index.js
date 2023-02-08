@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 import ReactDOM from 'react-dom';
 
-import Catalog from './src/Catalog';
+import ShopProvider from '~src/components/ShopProvider';
+import Catalog from '~src/components/Catalog';
+import ShoppingCart from '~src/components/ShoppingCart';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +13,10 @@ class App extends Component {
 
   render() {
     return (
-      <Catalog />
+      <ShopProvider >
+        <Catalog />
+        <ShoppingCart />
+      </ShopProvider >
     );
   }
 }

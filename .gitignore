@@ -1,3 +1,7 @@
 /node_modules
 /.cache
 /dist
+/src/components/views
+/src/helpers
+/src/routes
+/src/components/MainMenu.js
