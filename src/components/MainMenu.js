@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import {
-  Route, Switch, NavLink
-} from 'react-router-dom';
+import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
 import { mainPath, cartPath, contactsPath} from '~src/helpers/routes';
-import routes from '~src/routes';
 
 import './MainMenu.css';
 
@@ -16,22 +14,25 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <div className='shopping-header'>
-        <ul>
-          <div>
-            <li><NavLink exact to={mainPath()}>Main</NavLink></li>
-            <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
-          </div>
-          <li><NavLink to={cartPath()}>Cart</NavLink></li>
-        </ul>
-        <Switch>
-          {
-            routes.map((route, index) => (
-              <Route {...route} key={index} />
-            ))
+      <ShoppingCartContext.Consumer>
+        {
+          ({productsInCart}) => {
+            return (
+              <header className='shopping-header'>
+                <nav>
+                  <ul>
+                    <div>
+                      <li><NavLink exact to={mainPath()}>Main</NavLink></li>
+                      <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
+                    </div>
+                    <li><NavLink to={cartPath()}>Cart ({productsInCart.length})</NavLink></li>
+                  </ul>
+                </nav>
+              </header>
+            );
           }
-        </Switch>
-      </div>
+        }
+      </ShoppingCartContext.Consumer>
     );
   }
 }

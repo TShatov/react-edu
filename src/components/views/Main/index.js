@@ -1,7 +1,12 @@
 import React from 'react';
 
+import Catalog from '~src/components/Catalog';
+
 const MainPage = () => (
-  <div className='shopping-header__title'>Main</div>
+  <main>
+    <div className='shopping-header__title'>Main</div>
+    <Catalog />
+  </main>
 );
 
 export default MainPage;
