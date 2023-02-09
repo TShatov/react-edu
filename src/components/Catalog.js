@@ -13,14 +13,18 @@ class Catalog extends Component {
   render() {
     return (
       <div className='product-catalog'>
-        {
-          products.map((product) => (
-            <ProductCard 
-              key={product.id}
-              product={product}
-            />
-          ))
-        }
+        <div className='product-catalog__background'></div>
+        <div className='product-wrapper'>
+          {
+            products.map((product) => (
+              <ProductCard 
+                key={product.id}
+                product={product}
+              />
+            ))
+          }
+        </div>
+        
       </div>
     );
   }

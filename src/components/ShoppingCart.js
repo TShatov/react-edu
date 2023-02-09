@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
+import { Link } from 'react-router-dom';
+
+import { cartPath } from '~src/helpers/routes';
+
 import './ShoppingCart.css';
 
 class ShoppingCart extends Component {
@@ -23,7 +27,11 @@ class ShoppingCart extends Component {
                     ))
                   }
                 </ul>
-                <button>Buy</button>
+                <Link
+                  to={cartPath()}
+                  className='shopping-bag__buy-button'>
+                  Buy
+                </Link>
               </div>
             );
           }

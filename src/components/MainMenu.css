@@ -1,0 +1,50 @@
+.shopping-header {
+  height: 400px;
+  background-image: url(https://i.ibb.co/9cZ56rc/photo-2022-07-10-17-20-54.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.shopping-header ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 15px 70px;
+  background-color: #B92822;
+}
+
+.shopping-header__title {
+  width: 450px;
+  margin: 150px auto;
+  text-align: center;
+  background-color: #B92822;
+  color: aliceblue;
+  font-size: 100px;
+}
+
+.shopping-header ul::before {
+  position: absolute;
+  content: '';
+  background-image: url(https://i.ibb.co/m9wvWdf/Logo-SDSchool-S.png);
+  background-repeat: no-repeat;
+  background-size: 160px 160px;
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  left: calc(100%/2 - 80px);
+  top: -50px;
+}
+
+.shopping-header ul div {
+  display: flex;
+  gap: 80px;
+}
+
+.shopping-header a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 700;
+  color: aliceblue;
+}

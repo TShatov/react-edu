@@ -1,9 +1,25 @@
 .catalog-section {
-  background-color: #5D5D5D;
-  padding: 70px;
+  background-color: #252525;
 }
 
 .product-catalog {
+  position: relative;
+  padding: 70px;
+}
+
+.product-catalog__background {
+  position: absolute;
+  width: 1300px;
+  height: 450px;
+  top: calc(100%/2 - 225px);
+  left: calc(100%/2 - 650px);
+  opacity: 0.05;
+  background-image: url(https://i.ibb.co/9wYxkBr/Logo-full-SDSchool.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.product-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
