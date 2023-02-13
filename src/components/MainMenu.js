@@ -13,6 +13,11 @@ class MainMenu extends Component {
   }
 
   render() {
+    function calculateSum(productsInCart) {
+
+      const sum = productsInCart.reduce( (acc, curObj) => {
+        return acc + curObj.amount;}, 0);
+    }
     return (
       <ShoppingCartContext.Consumer>
         {
@@ -25,7 +30,7 @@ class MainMenu extends Component {
                       <li><NavLink exact to={mainPath()}>Main</NavLink></li>
                       <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
                     </div>
-                    <li><NavLink to={cartPath()}>Cart ({productsInCart.length})</NavLink></li>
+                    <li><NavLink to={cartPath()}>Cart ({calculateSum(productsInCart)})</NavLink></li>
                   </ul>
                 </nav>
               </header>

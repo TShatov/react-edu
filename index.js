@@ -20,7 +20,7 @@ const App = () => (
         }
       </Switch>
     </Router>
-  </ShopProvider >
+  </ShopProvider>
 );
 
 const container = document.getElementById('root');

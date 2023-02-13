@@ -19,8 +19,8 @@ const CartPage = () => (
                 <p>Shopping Bag:</p>
                 <ul>
                   {
-                    productsInCart.map((cartItem, amount) => (
-                      <li key={cartItem.product.id}>{cartItem.product.title}<span> {cartItem. amount}</span></li>
+                    productsInCart.map((cartItem, itemKey) => (
+                      <li key={itemKey}>{cartItem.product.title}<span>Amount: {cartItem.amount}</span></li>
                     ))
                   }
                 </ul>
@@ -28,7 +28,7 @@ const CartPage = () => (
               <Link
                 to={cartPath()}
                 className='shopping-bag__buy-button'>
-                Buy ({productsInCart.length})
+                Buy
               </Link>
             </div>
           );

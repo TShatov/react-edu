@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px 0px 30px;
 }
 
 .shopping-bag p {
@@ -60,5 +61,7 @@
 }
 
 .shopping-list-wrapper li {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #494949;
 }
