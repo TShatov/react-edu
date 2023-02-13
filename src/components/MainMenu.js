@@ -10,14 +10,17 @@ import './MainMenu.css';
 class MainMenu extends Component {
   constructor(props) {
     super(props);
+
+    this.calculateSum = this.calculateSum.bind(this);
+  }
+
+  calculateSum(products) {
+    return products.reduce( (acc, curObj) => {
+      return acc + curObj.amount;
+    }, 0);
   }
 
   render() {
-    function calculateSum(productsInCart) {
-
-      const sum = productsInCart.reduce( (acc, curObj) => {
-        return acc + curObj.amount;}, 0);
-    }
     return (
       <ShoppingCartContext.Consumer>
         {
@@ -30,7 +33,7 @@ class MainMenu extends Component {
                       <li><NavLink exact to={mainPath()}>Main</NavLink></li>
                       <li><NavLink to={contactsPath()}>Contacts</NavLink></li>
                     </div>
-                    <li><NavLink to={cartPath()}>Cart ({calculateSum(productsInCart)})</NavLink></li>
+                    <li><NavLink to={cartPath()}>Cart ({this.calculateSum(productsInCart)})</NavLink></li>
                   </ul>
                 </nav>
               </header>
