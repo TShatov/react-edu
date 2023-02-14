@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import ShopProvider from '~src/components/ShopProvider';
-import Catalog from '~src/components/Catalog';
-import ShoppingCart from '~src/components/ShoppingCart';
+import MainMenu from '~src/components/MainMenu';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+import routes from '~src/routes';
 
-  render() {
-    return (
-      <ShopProvider >
-        <Catalog />
-        <ShoppingCart />
-      </ShopProvider >
-    );
-  }
-}
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+const App = () => (
+  <ShopProvider >
+    <Router>
+      <MainMenu />
+      <Switch>
+        {
+          routes.map((route, index) => (
+            <Route {...route} key={index} />
+          ))
+        }
+      </Switch>
+    </Router>
+  </ShopProvider>
 );
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);

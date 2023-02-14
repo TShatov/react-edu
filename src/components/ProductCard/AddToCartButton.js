@@ -6,7 +6,7 @@ class AddToCart extends Component {
     super(props);
 
     this.state = {
-      quantity: 1
+      amount: 1
     };
 
     this.setQuantity = this.setQuantity.bind(this);
@@ -14,7 +14,7 @@ class AddToCart extends Component {
 
   setQuantity(e) {
     this.setState({
-      quantity: parseInt(e.target.value)
+      amount: parseInt(e.target.value)
     });
   }
 
@@ -28,10 +28,10 @@ class AddToCart extends Component {
                 <label>Quantity</label>
                 <input 
                   type='number'
-                  value={this.state.quantity}
+                  value={this.state.amount}
                   onChange={this.setQuantity}
                 />
-                <button onClick={() => addProduct(this.props.product, this.quantity)}>Add to Cart</button>
+                <button onClick={() => addProduct(this.props.product, this.state.amount)}>Add to Cart</button>
               </div>
             );
           }

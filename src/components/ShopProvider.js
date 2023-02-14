@@ -13,7 +13,15 @@ class ShopProvider extends Component {
 
   addProduct(product, amount = 1) {
     const productsInCart = this.state.productsInCart;
-    productsInCart.push({ product, amount });
+    
+    const index = productsInCart.findIndex(currentIndex => currentIndex.product.id === product.id);
+
+    if (index === -1) {
+      productsInCart.push({ product, amount });
+    } else {
+      productsInCart[index].amount += amount;
+    }
+
     this.setState({ productsInCart });
   }
 
