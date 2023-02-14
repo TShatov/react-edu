@@ -5,7 +5,7 @@ import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
 import { cartPath } from '~src/helpers/routes';
 
-import './ShoppingCart.css';
+import './Cart.css';
 
 const CartPage = () => (
   <main>

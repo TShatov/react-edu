@@ -3,7 +3,7 @@ import React from 'react';
 import ProductCard from '~src/components/ProductCard';
 import products from '~src/constants/Products';
 
-import './Catalog.css';
+import './Main.css';
 
 const MainPage = () => (
   <main>
