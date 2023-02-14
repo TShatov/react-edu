@@ -19,7 +19,7 @@ class ShopProvider extends Component {
     if (index === -1) {
       productsInCart.push({ product, amount });
     } else {
-      productsInCart[index].amount += 1;
+      productsInCart[index].amount += amount;
     }
 
     this.setState({ productsInCart });
