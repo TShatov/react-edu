@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import ShoppingCartContext from '~src/contexts/ShoppingCartContext';
 
-import { mainPath, cartPath, contactsPath} from '~src/helpers/routes';
+import { mainPath, cartPath, contactsPath } from '~src/helpers/routes';
 
 import './MainMenu.css';
 
@@ -15,7 +15,7 @@ class MainMenu extends Component {
   }
 
   calculateSum(products) {
-    return products.reduce( (acc, curObj) => {
+    return products.reduce((acc, curObj) => {
       return acc + curObj.amount;
     }, 0);
   }
