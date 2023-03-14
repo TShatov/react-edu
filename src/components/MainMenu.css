@@ -1,8 +1,6 @@
 .shopping-header {
-  height: 420px;
-  background-image: url(https://i.ibb.co/9cZ56rc/photo-2022-07-10-17-20-54.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 90px;
+  background-image: linear-gradient(rgb(56, 56, 56), rgb(58, 58, 58));
 }
 
 .shopping-header ul {

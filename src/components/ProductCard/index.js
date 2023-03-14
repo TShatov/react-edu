@@ -22,7 +22,7 @@ class ProductCard extends Component {
       <div className='product-card'>
         <div className='left'>
           <Image
-            src={product.image}
+            src={product.gallery[0].url}
             width={330}
             height={383}
             alt={product.title}
