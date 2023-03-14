@@ -18,8 +18,8 @@ class ProductPage extends Component {
       };
   }
 
-  imageUpdate() {
-    console.log(this.state);
+  imageUpdate(url) {
+    this.setState({ currentImage: url});
   }
 
   componentDidMount() {
@@ -52,7 +52,7 @@ class ProductPage extends Component {
               <div className='product-card__gallery'>
                 {
                   product.gallery.map((item) => (
-                    <img src={item.url} key={item.id}></img>
+                    <img onClick={() => this.imageUpdate(item.url)} src={item.url} key={item.id}></img>
                   ))
                 }
               </div>
