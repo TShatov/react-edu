@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import { NavLink } from 'react-router-dom';
+
+import { productPath } from '~src/helpers/routes';
+
 import TextBox from './TextBox';
 import Price from './Price';
 import Image from './Image';
@@ -25,7 +29,7 @@ class ProductCard extends Component {
           />
         </div>
         <div className='right'>
-          <TextBox title={product.title} />
+          <NavLink to={productPath(product.id)}><TextBox title={product.title} /></NavLink>
           <Price price={product.price} />
           <AddToCart product={product} />
         </div>

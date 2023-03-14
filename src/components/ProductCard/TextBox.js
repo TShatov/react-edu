@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const TextBox = ({ title }) => (
-  <span>{title}</span>
-);
+class TextBox extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return ( 
+      <span>{this.props.title}</span>
+    );
+  }
+}
 
 export default TextBox;
