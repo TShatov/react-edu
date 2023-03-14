@@ -16,6 +16,7 @@
   font-weight: 700;
   color: aliceblue;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .product-card__price {
@@ -46,4 +47,40 @@
   font-size: 20px;
   letter-spacing: 3px;
   color: aliceblue;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.slider-icon {
+  appearance: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  opacity: 0.5;
+  outline: 0;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  transition: 0.3s;
+}
+
+.slider-icon:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.slide-prev {
+  left: 18px;
+  background-image: url(~src/assets/reshot-icon-chevron-arrow-left.svg);
+}
+
+.slide-next {
+  right: 80px;
+  background-image: url(~src/assets/reshot-icon-chevron-arrow-right.svg);
 }

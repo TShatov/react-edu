@@ -8,6 +8,7 @@ const url = 'https://cdn.contentful.com/';
 const spaceId = 'v441z4n7clri';
 const environmentId = 'master';
 const accessToken = 'R4FhPbGLGH4OrEfOi4RDTw-19pCcDYV6hLcZZxbMNX4';
+let imageCount = 0;
 
 class ProductPage extends Component {
   constructor(props) {
@@ -20,6 +21,24 @@ class ProductPage extends Component {
 
   imageUpdate(url) {
     this.setState({ currentImage: url});
+  }
+
+  prevImage() {
+    if (imageCount == 0) {
+      return;
+    } else {
+      imageCount--;
+    }
+    this.setState({ currentImage: this.state.product.gallery[imageCount].url});
+  }
+
+  nextImage() {
+    if (imageCount == this.state.product.gallery.length - 1) {
+      return;
+    } else {
+      imageCount++;
+    }
+    this.setState({ currentImage: this.state.product.gallery[imageCount].url});
   }
 
   componentDidMount() {
@@ -46,9 +65,15 @@ class ProductPage extends Component {
           <div className='shopping-header__title'>Product:</div>
           <div className='product-card__container'>
             <div className='product-cart__column'>
-              <div className='product-card__title'>{product.title}</div>
+              <h2 className='product-card__title'>{product.title}</h2>
               <div className='product-card__price'>{product.price}</div>
-              <img className='product-card__main-image' src={this.state.currentImage} />
+              <div className='slider-container'>
+                <div className='slider-icons'>
+                  <button onClick={() => this.prevImage()} className='slide-prev slider-icon'></button>
+                  <button onClick={() => this.nextImage()} className='slide-next slider-icon'></button>
+                </div>
+                <img className='product-card__main-image' src={this.state.currentImage} />
+              </div>
               <div className='product-card__gallery'>
                 {
                   product.gallery.map((item) => (
