@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import request from 'superagent';
 
+import Slideshow from '~src/components/Slideshow';
 import ProductCard from '~src/components/ProductCard';
 
 import './Main.css';
@@ -31,6 +32,7 @@ class MainPage extends Component {
     return (
       <main>
         <div className='shopping-header__title'>Main</div>
+        <Slideshow />
         <div className='product-catalog'>
           <div className='product-catalog__background'></div>
           <div className='product-wrapper'>

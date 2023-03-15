@@ -1,6 +1,6 @@
 .product-card__container {
   padding: 20px 70px;
-  height: 60vh;
+  height: 100%;
   display: flex;
 }
 
