@@ -42,12 +42,8 @@ class ProductPage extends Component {
 
     makeRequest({'content_type': 'product'})
       .then(({ body }) => {
-        body.items.forEach( product => {
-          if (product.fields.id === Number(id)) {
-            this.setState({ product: product.fields });
-            this.setState({ currentImage: product.fields.gallery[0].url });
-          }
-        });
+        this.setState({ product: body.items[id].fields });
+        this.setState({ currentImage: body.items[id].fields.gallery[0].url });
       });
   }
 
