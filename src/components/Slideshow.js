@@ -18,7 +18,7 @@ class Slideshow extends Component {
   componentDidMount() {
     makeRequest({'content_type': 'images'})
       .then(({ body: { items } }) => {
-        this.setState({ images: items });
+        this.setState({ images: items[0].fields });
         this.setState({ currentImage: items[0].fields.gallery[0].url});
       });
   }
@@ -29,26 +29,26 @@ class Slideshow extends Component {
     } else {
       slideshowCounter--;
     }
-    this.setState({ currentImage: this.state.images[0].fields.gallery[slideshowCounter].url});
+    this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }
 
   nextImage() {
-    if (slideshowCounter == this.state.images[0].fields.gallery.length - 1) {
+    if (slideshowCounter == this.state.images.gallery.length - 1) {
       return;
     } else {
       slideshowCounter++;
     }
-    this.setState({ currentImage: this.state.images[0].fields.gallery[slideshowCounter].url});
+    this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }
 
   slideshowImage() {
     setTimeout(() => {
-      if (slideshowCounter == this.state.images[0].fields.gallery.length - 1) {
+      if (slideshowCounter == this.state.images.gallery.length - 1) {
         return slideshowCounter = 0;
       } else {
         slideshowCounter++;
       }
-      this.setState({ currentImage: this.state.images[0].fields.gallery[slideshowCounter].url});
+      this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
     }, 5000);
   }
 

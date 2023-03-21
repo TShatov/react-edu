@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-import request from 'superagent';
+import makeRequest from '~src/helpers/api';
 
 import './Product.css';
 
-const url = 'https://cdn.contentful.com/';
-const spaceId = 'v441z4n7clri';
-const environmentId = 'master';
-const accessToken = 'R4FhPbGLGH4OrEfOi4RDTw-19pCcDYV6hLcZZxbMNX4';
 let imageCount = 0;
 
 class ProductPage extends Component {
@@ -44,9 +40,7 @@ class ProductPage extends Component {
   componentDidMount() {
     const id = this.props.id;
 
-    request
-      .get(`${url}spaces/${spaceId}/environments/${environmentId}/entries?access_token=${accessToken}`)
-      .query({'content_type': 'product'})
+    makeRequest({'content_type': 'product'})
       .then(({ body }) => {
         body.items.forEach( product => {
           if (product.fields.id === Number(id)) {
