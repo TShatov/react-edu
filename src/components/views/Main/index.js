@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 
-import request from 'superagent';
+import makeRequest from '~src/helpers/api';
 
 import Slideshow from '~src/components/Slideshow';
 import ProductCard from '~src/components/ProductCard';
 
 import './Main.css';
-
-const url = 'https://cdn.contentful.com/';
-const spaceId = 'v441z4n7clri';
-const environmentId = 'master';
-const accessToken = 'R4FhPbGLGH4OrEfOi4RDTw-19pCcDYV6hLcZZxbMNX4';
 
 class MainPage extends Component {
   constructor(props) {
@@ -19,10 +14,7 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
-    request
-      .get(`${url}spaces/${spaceId}/environments/${environmentId}/entries?access_token=${accessToken}`)
-      .query({'content_type': 'product'})
-      .set('Authorization', `Bearer: ${accessToken}`)
+    makeRequest({'content_type': 'product'})
       .then(({ body: { items } }) => {
         this.setState({ items });
       });

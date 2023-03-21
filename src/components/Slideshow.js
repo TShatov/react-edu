@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
-import request from 'superagent';
+import makeRequest from '~src/helpers/api';
 
 import './Slideshow.css';
-
-const url = 'https://cdn.contentful.com/';
-const spaceId = 'v441z4n7clri';
-const environmentId = 'master';
-const accessToken = '2uQkP24LThdDkW6JWmvVIA3ys7nqBwX6df_fzamh9JU';
 
 let slideshowCounter = 0;
 
@@ -21,10 +16,7 @@ class Slideshow extends Component {
   }
 
   componentDidMount() {
-    request
-      .get(`${url}spaces/${spaceId}/environments/${environmentId}/entries?access_token=${accessToken}`)
-      .query({'content_type': 'images'})
-      .set('Authorization', `Bearer: ${accessToken}`)
+    makeRequest({'content_type': 'images'})
       .then(({ body: { items } }) => {
         this.setState({ images: items });
         this.setState({ currentImage: items[0].fields.gallery[0].url});
