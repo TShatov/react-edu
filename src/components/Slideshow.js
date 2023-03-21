@@ -21,6 +21,14 @@ class Slideshow extends Component {
         this.setState({ images: items[0].fields });
         this.setState({ currentImage: items[0].fields.gallery[0].url});
       });
+
+    setInterval(() => {
+      if (slideshowCounter == this.state.images.gallery.length - 1) {
+        return slideshowCounter = 0;
+      }
+      slideshowCounter++;
+      this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
+    }, 5000);
   }
 
   prevImage() {
@@ -39,17 +47,6 @@ class Slideshow extends Component {
     this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }
 
-  slideshowImage() {
-    setTimeout(() => {
-      if (slideshowCounter == this.state.images.gallery.length - 1) {
-        return slideshowCounter = 0;
-      } else {
-        slideshowCounter++;
-      }
-      this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
-    }, 5000);
-  }
-
   render() {
     const images = this.state.images;
     if (images) {
@@ -59,7 +56,7 @@ class Slideshow extends Component {
             <button onClick={() => this.prevImage()} className='slideshow-prev slider-icon'></button>
             <button onClick={() => this.nextImage()} className='slideshow-next slider-icon'></button>
           </div>
-          <img onLoad={this.slideshowImage()} className='slideshow-image' src={this.state.currentImage} />
+          <img className='slideshow-image' src={this.state.currentImage} />
         </div>
       );
     }
