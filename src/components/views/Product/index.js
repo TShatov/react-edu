@@ -22,18 +22,16 @@ class ProductPage extends Component {
   prevImage() {
     if (imageCount == 0) {
       return;
-    } else {
-      imageCount--;
     }
+    imageCount--;
     this.setState({ currentImage: this.state.product.gallery[imageCount].url});
   }
 
   nextImage() {
     if (imageCount == this.state.product.gallery.length - 1) {
       return;
-    } else {
-      imageCount++;
-    }
+    } 
+    imageCount++;
     this.setState({ currentImage: this.state.product.gallery[imageCount].url});
   }
 

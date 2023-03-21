@@ -26,18 +26,16 @@ class Slideshow extends Component {
   prevImage() {
     if (slideshowCounter == 0) {
       return;
-    } else {
-      slideshowCounter--;
-    }
+    } 
+    slideshowCounter--;
     this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }
 
   nextImage() {
     if (slideshowCounter == this.state.images.gallery.length - 1) {
       return;
-    } else {
-      slideshowCounter++;
     }
+    slideshowCounter++;
     this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }
 
