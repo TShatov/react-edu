@@ -32,17 +32,13 @@ class Slideshow extends Component {
   }
 
   prevImage() {
-    if (slideshowCounter == 0) {
-      return;
-    } 
+    if (slideshowCounter == 0) return;
     slideshowCounter--;
     this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }
 
   nextImage() {
-    if (slideshowCounter == this.state.images.gallery.length - 1) {
-      return;
-    }
+    if (slideshowCounter == this.state.images.gallery.length - 1) return;
     slideshowCounter++;
     this.setState({ currentImage: this.state.images.gallery[slideshowCounter].url});
   }

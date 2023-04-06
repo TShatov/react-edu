@@ -14,7 +14,7 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
-    makeRequest({'content_type': 'product'})
+    makeRequest({content_type: 'product'})
       .then(({ body: { items } }) => {
         this.setState({ items });
       });
