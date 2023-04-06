@@ -1,0 +1,86 @@
+.product-card__container {
+  padding: 20px 70px;
+  height: 100%;
+  display: flex;
+}
+
+.product-cart__column {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  gap: 10px;
+}
+
+.product-card__title {
+  font-size: 30px;
+  font-weight: 700;
+  color: aliceblue;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.product-card__price {
+  font-size: 20px;
+  font-weight: 700;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+.product-card__main-image {
+  width: 90%;
+  height: 441px;
+  object-fit: cover;
+}
+
+.product-card__gallery {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card__gallery img {
+  width: 30%;
+  cursor: pointer;
+}
+
+.product-card__about {
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: aliceblue;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.slider-icon {
+  appearance: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-size: 35px 35px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  opacity: 0.5;
+  outline: 0;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  transition: 0.3s;
+}
+
+.slider-icon:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.slide-prev {
+  left: 18px;
+  background-image: url(~src/assets/reshot-icon-chevron-arrow-left.svg);
+}
+
+.slide-next {
+  right: 80px;
+  background-image: url(~src/assets/reshot-icon-chevron-arrow-right.svg);
+}

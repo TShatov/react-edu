@@ -52,6 +52,11 @@
   text-transform: uppercase;
 }
 
+.product-card .right a {
+  text-decoration: none;
+  color: #F9FAFD;
+}
+
 .product-card .right p {
   font-size: 24px;
   font-weight: 400;

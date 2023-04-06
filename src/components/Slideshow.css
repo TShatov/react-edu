@@ -1,0 +1,21 @@
+.slideshow-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow-prev {
+  left: 20px;
+  background-image: url(~src/assets/reshot-icon-chevron-arrow-left.svg);
+}
+
+.slideshow-next {
+  right: 20px;
+  background-image: url(~src/assets/reshot-icon-chevron-arrow-right.svg);
+}
