@@ -9,17 +9,15 @@ let slideshowCounter = 0;
 class Slideshow extends Component {
   constructor(props) {
     super(props);
-    this.state = 
-      { 
-        currentImage: {},
-      };
+    this.state = {};
   }
 
   componentDidMount() {
     makeRequestAll({'content_type': 'images'})
-      .then(({ body: { items } }) => {
-        this.setState({ images: items[0].fields });
-        this.setState({ currentImage: items[0].fields.gallery[0].url});
+      .then(({ body: { items }}) => {
+        const gallery = items[0].fields;
+        this.setState({ images: gallery });
+        this.setState({ currentImage: gallery.gallery[0].url});
       });
 
     setInterval(() => {
