@@ -14,7 +14,7 @@ class ShopProvider extends Component {
   addProduct(product, amount = 1) {
     const productsInCart = this.state.productsInCart;
     
-    const index = productsInCart.findIndex(currentIndex => currentIndex.product.id === product.id);
+    const index = productsInCart.findIndex(currentIndex => currentIndex.product.sys.id === product.sys.id);
 
     if (index === -1) {
       productsInCart.push({ product, amount });

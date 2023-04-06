@@ -22,15 +22,15 @@ class ProductCard extends Component {
       <div className='product-card'>
         <div className='left'>
           <Image
-            src={product.gallery[0].url}
+            src={product.fields.gallery[0].url}
             width={330}
             height={383}
             alt={product.title}
           />
         </div>
         <div className='right'>
-          <NavLink to={productPath(product.id)}><TextBox title={product.title} /></NavLink>
-          <Price price={product.price} />
+          <NavLink to={productPath(product.sys.id)}><TextBox title={product.fields.title} /></NavLink>
+          <Price price={product.fields.price} />
           <AddToCart product={product} />
         </div>
       </div>

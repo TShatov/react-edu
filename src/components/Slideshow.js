@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import makeRequest from '~src/helpers/api';
+import {makeRequestAll} from '~src/helpers/api';
 
 import './Slideshow.css';
 
@@ -16,7 +16,7 @@ class Slideshow extends Component {
   }
 
   componentDidMount() {
-    makeRequest({'content_type': 'images'})
+    makeRequestAll({'content_type': 'images'})
       .then(({ body: { items } }) => {
         this.setState({ images: items[0].fields });
         this.setState({ currentImage: items[0].fields.gallery[0].url});

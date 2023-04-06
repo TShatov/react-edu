@@ -20,7 +20,7 @@ const CartPage = () => (
                 <ul>
                   {
                     productsInCart.map((cartItem) => (
-                      <li key={cartItem.product.id}>{cartItem.product.title}<span>Amount: {cartItem.amount}</span></li>
+                      <li key={cartItem.product.sys.id}>{cartItem.product.fields.title}<span>Amount: {cartItem.amount}</span></li>
                     ))
                   }
                 </ul>

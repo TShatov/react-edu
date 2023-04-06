@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import makeRequest from '~src/helpers/api';
+import {makeRequestAll} from '~src/helpers/api';
 
 import Slideshow from '~src/components/Slideshow';
 import ProductCard from '~src/components/ProductCard';
@@ -14,7 +14,7 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
-    makeRequest({content_type: 'product'})
+    makeRequestAll({content_type: 'product'})
       .then(({ body: { items } }) => {
         this.setState({ items });
       });
@@ -31,8 +31,8 @@ class MainPage extends Component {
             {
               this.state.items.map((product) => (
                 <ProductCard 
-                  key={product.fields.id}
-                  product={product.fields}
+                  key={product.sys.id}
+                  product={product}
                 />
               ))
             }

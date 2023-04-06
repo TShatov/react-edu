@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import makeRequest from '~src/helpers/api';
+import {makeRequestOne} from '~src/helpers/api';
 
 import './Product.css';
 
@@ -34,10 +34,10 @@ class ProductPage extends Component {
   componentDidMount() {
     const id = this.props.id;
 
-    makeRequest({'content_type': 'product'})
+    makeRequestOne(id)
       .then(({ body }) => {
-        this.setState({ product: body.items[id].fields });
-        this.setState({ currentImage: body.items[id].fields.gallery[0].url });
+        this.setState({ product: body.fields });
+        this.setState({ currentImage: body.fields.gallery[0].url });
       });
   }
 
